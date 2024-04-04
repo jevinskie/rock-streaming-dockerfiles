@@ -2,7 +2,11 @@ FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN echo "APT::Get::Always-Include-Phased-Updates true;" >> /etc/apt/apt.conf
+
 RUN apt-get update
+RUN apt-get install -y apt-utils
+RUN apt-get upgrade -y apt e2fsprogs
 
 # compilers and tools
 RUN apt-get install -y \
@@ -41,6 +45,7 @@ RUN apt-get install -y \
     gengetopt \
     graphviz \
     libasound2-dev \
+    libavcodec60 \
     libbenchmark-dev \
     libcpputest-dev \
     libpulse-dev \

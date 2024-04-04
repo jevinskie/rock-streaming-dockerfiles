@@ -68,7 +68,7 @@ fi | while read image; do
         image_shortname="$image"
         image_tag=""
     fi
-    image_fullname="rocstreaming/$image_shortname"
+    image_fullname="jevinskie/rocstreaming-$image_shortname"
     image_dir="images/$image_shortname"
 
     pushd "$image_dir" >/dev/null
